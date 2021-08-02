@@ -19,11 +19,9 @@ const handler = async (event) => {
   // Delete From DB
   const sql = helpers.sqldel(eventId);
 
-  console.log(sql);
-  dbAction(sql, (results) => {
-    console.log(results);
-    return results;
-  });
+  // dbAction(sql, (results) => {
+  //   return results;
+  // });
 
   dbEnd();
 

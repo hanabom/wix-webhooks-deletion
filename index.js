@@ -9,7 +9,7 @@ const handler = async (event) => {
 
   // Delete Item From Hanabom
   const sql = helpers.sqlget();
-  
+
   dbAction(sql, results => results.forEach(element => {
     if(element.wixId == eventId){
         delHanabom(element.hanaId);
@@ -24,12 +24,13 @@ const handler = async (event) => {
     console.log(results);
     return results;
   });
+
   dbEnd();
 
-  // TODO implement
+  // return code
   const response = {
     statusCode: 200,
-    body: JSON.stringify("New Product updated"),
+    body: JSON.stringify("Product Deletion Implemented"),
   };
   return response;
 };

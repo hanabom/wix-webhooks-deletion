@@ -31,6 +31,8 @@ Latest commit d0f9781 on May 25
 
 # custom
 config.js
+testingPurposeOnly.js
+testData.js
 
 # Logs
 logs

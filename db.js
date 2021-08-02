@@ -12,12 +12,6 @@ const dbConn = mysql.createConnection({
 dbConn.connect((err) => {
   if (err) throw err;
   console.log("MySql connected...");
-
-  return dbConn.query("SELECT * FROM products", function (err, result, fields) {
-    if (err) throw err;
-    console.log(result);
-    return result;
-  });
 });
 
 const dbAction = (sql, callback) => {
@@ -29,4 +23,6 @@ const dbAction = (sql, callback) => {
   });
 };
 
-module.exports = { dbAction };
+const dbEnd = () => dbConn.end();
+
+module.exports = { dbAction, dbEnd };

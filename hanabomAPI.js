@@ -27,4 +27,14 @@ const putHanabom = (param1, data) => {
   );
 };
 
-module.exports = { uploadHanabom, getHanabom, putHanabom };
+const delHanabom = (id) => {
+  return WooCommerce.deleteAsync("products/" + id)
+  .then((response) => {
+      console.log(response.data);
+  })
+  .catch((error) => {
+      console.log(error.response.data);
+  });
+}
+
+module.exports = { uploadHanabom, getHanabom, putHanabom, delHanabom };

@@ -27,7 +27,12 @@ jobs:
       - uses: "finnp/create-file-action@master"
         env:
           FILE_NAME: "config.js"
-          FILE_DATA: "module.exports = { hanabomKey : '${{ secrets.Hanabom_KEY }}', hanabomSecret : '${{ secrets.Hanabom_SECRET }}' };"
+          FILE_DATA: "module.exports = { hanabomKey : '${{ secrets.Hanabom_KEY }}', hanabomSecret : '${{ secrets.Hanabom_SECRET }}',
+          dbHost : '${{ secrets.dbHost }}',
+          dbPort : '${{ secrets.dbPort }}',
+          dbUser : '${{ secrets.dbUser }}',
+          dbPassword : '${{ secrets.dbPassword }}',
+           };"
       - name: zip
         uses: montudor/action-zip@v0.1.0
         with:
@@ -38,5 +43,5 @@ jobs:
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: us-west-2
-          function_name: wix-webhooks-Deletion
+          function_name: wix-webhooks-updation
           zip_file: bundle.zip
